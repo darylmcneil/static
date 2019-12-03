@@ -12,6 +12,11 @@ pipeline {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'index.html', bucket:'jenbucketnano')
           }
         }
+      stage('Security Scan') {
+        steps {
+          probelyScan targetId: '3jL5hURsdnnz', credentialsId: 'securityscan'
+          }
+        }
       }
     }
 }
