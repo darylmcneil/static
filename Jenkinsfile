@@ -30,11 +30,11 @@ pipeline {
           if (isUnix()) {
             sh 'k6 run --quiet -o cloud github.com/loadimpact/k6-circleci-example/loadtests/main.js'        
    }
+      }
           else {
             bat 'k6.exe run --quiet -o cloud github.com/loadimpact/k6-circleci-example/loadtests/main.js'
           }
       }
-    }
-} 
+  } 
 
 
