@@ -24,9 +24,8 @@ pipeline {
           probelyScan targetId: '3jL5hURsdnnz', credentialsId: 'securityscan'
           }
         }
-      stage ("test") {
-        env.K6CLOUD_TOKEN=
-"daf002ec9b701e7dd8d1adeb91e528d95ca1c61ca3fe292a00789941106fe217"
+      stage ("test") {                                                     env.K6CLOUD_TOKEN="daf002ec9b701e7dd8d1
+adeb91e528d95ca1c61ca3fe292a00789941106fe217"
         if (isUnix()) {
             sh "k6 run --quiet -o cloud github.com/loadimpact/k6-circleci-example/loadtests/main.js"
         } else {
