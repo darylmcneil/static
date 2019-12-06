@@ -8,12 +8,6 @@ pipeline {
     }
     stage('Upload to AWS') {
       steps {
-        retry(2) {
-          sh './flakey-deploy.sh'
-		          }
-	      timeout(time: 3, unit: 'MINUTES') {
-          sh './health-check.sh'
-              }
         withAWS(region:'us-west-2',credentials:'aws-static') {
           s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'index.html', bucket:'jenbucketnano')
           }
