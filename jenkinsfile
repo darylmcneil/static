@@ -23,7 +23,7 @@ pipeline {
         K6CLOUD_TOKEN='ed2da07aa40e38c367c84d5c128301348a3716898b8c26a876827ef01bd83c2'
       }
       steps {
-            sh 'k6 run --quiet -o cloud github.com/loadimpact/k6-circleci-example/loadtests/main.js'        
+            sh 'k6 run --quiet -o cloud github.com/loadimpact/k6-jenkins-example/blob/master/loadtests/performance-test.js        
         }  
           }
       }
