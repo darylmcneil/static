@@ -27,7 +27,7 @@ pipeline {
         K6CLOUD_TOKEN='ed2da07aa40e38c367c84d5c128301348a3716898b8c26a876827ef01bd83c2'
       }
         steps {
-            sh 'k6 run --quiet -o cloud github.com/darylmcneil/static/blob/master/performance.js'        
+            sh 'k6 run performance.js'        
         }  
           }
       }
