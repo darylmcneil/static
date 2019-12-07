@@ -2,7 +2,7 @@ pipeline {
   agent any
   options {
         timeout(time: 10, unit: 'MINUTES')
-        retry(3) 
+        retry(2) 
     }
   stages {
     stage('Lint HTML') {
