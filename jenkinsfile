@@ -1,5 +1,11 @@
 pipeline {
   agent any
+  options {
+        timeout(time: 10, unit: 'MINUTES') 
+    }
+  options {
+        retry(2) 
+    }
   stages {
     stage('Lint HTML') {
       steps {
@@ -23,7 +29,7 @@ pipeline {
         K6CLOUD_TOKEN='ed2da07aa40e38c367c84d5c128301348a3716898b8c26a876827ef01bd83c2'
       }
       steps {
-            sh 'k6 run --quiet -o cloud github.com/loadimpact/k6-jenkins-example/blob/master/loadtests/performance-test.js'        
+            sh 'k6 run --quiet -o cloud github.com/darylmcneil/static/blob/master/performance.js        
         }  
           }
       }
